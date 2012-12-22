@@ -27,4 +27,9 @@ public class ListTest {
   public void newSize() {
     assertEquals(0, list.size());
   }
+
+  @Test
+  public void insertCompiles() {
+    list.insert(DUMMY_ELEMENT);
+  }
 }

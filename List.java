@@ -9,4 +9,8 @@ public class List {
   public int size() {
     return 0;
   }
+
+  /** sortiertes Einfuegen eines gegebenen Elementes, keine doppelten Elemente */
+  public void insert(Comparable element) {
+  }
 }
