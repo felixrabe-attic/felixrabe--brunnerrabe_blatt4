@@ -5,12 +5,9 @@ import static org.junit.Assert.*;
 
 @SuppressWarnings("unchecked")
 public class ListTest {
-  private static final Comparable DUMMY_ELEMENT = new Comparable<Object>() {
-    @Override
-    public int compareTo(Object o) {
-      return 0;
-    }
-  };
+  private static final Comparable DUMMY_ELEMENT_1 = new Integer(1);
+  private static final Comparable DUMMY_ELEMENT = DUMMY_ELEMENT_1;  // alias
+  private static final Comparable DUMMY_ELEMENT_2 = new Integer(2);
 
   private List list;
 
