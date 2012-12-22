@@ -4,4 +4,9 @@ public class List {
   public boolean isEmpty() {
     return true;
   }
+
+  /** aktuelle Anzahl der Elemente */
+  public int size() {
+    return 0;
+  }
 }
