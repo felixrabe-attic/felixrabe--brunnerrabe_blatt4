@@ -3,7 +3,15 @@ import org.junit.runner.*;
 import org.junit.runners.*;
 import static org.junit.Assert.*;
 
+@SuppressWarnings("unchecked")
 public class ListTest {
+  private static final Comparable DUMMY_ELEMENT = new Comparable<Object>() {
+    @Override
+    public int compareTo(Object o) {
+      return 0;
+    }
+  };
+
   private List list;
 
   public ListTest() {
