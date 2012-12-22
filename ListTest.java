@@ -39,4 +39,9 @@ public class ListTest {
     list.insert(DUMMY_ELEMENT);
     assertFalse(list.isEmpty());
   }
+
+  @Test(expected = ListException.class)
+  public void insertNullThrowsException() {
+    list.insert(null);
+  }
 }

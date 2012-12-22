@@ -13,6 +13,9 @@ public class List {
 
   /** sortiertes Einfuegen eines gegebenen Elementes, keine doppelten Elemente */
   public void insert(Comparable element) {
+    if (element == null) {
+      throw new ListException();
+    }
     empty = false;
   }
 }
