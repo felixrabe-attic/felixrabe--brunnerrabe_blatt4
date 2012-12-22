@@ -8,7 +8,7 @@ public class List {
 
   /** aktuelle Anzahl der Elemente */
   public int size() {
-    return 0;
+    return empty ? 0 : 1;
   }
 
   /** sortiertes Einfuegen eines gegebenen Elementes, keine doppelten Elemente */

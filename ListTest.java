@@ -44,4 +44,11 @@ public class ListTest {
   public void insertNullThrowsException() {
     list.insert(null);
   }
+
+  @Test
+  public void afterInsertOneElementSize1() {
+    assertEquals(0, list.size());
+    list.insert(DUMMY_ELEMENT);
+    assertEquals(1, list.size());
+  }
 }
