@@ -51,4 +51,10 @@ public class ListTest {
     list.insert(DUMMY_ELEMENT);
     assertEquals(1, list.size());
   }
+
+  @Test(expected = ListException.class)
+  public void insertingDuplicateElementsThrowsException() {
+    list.insert(DUMMY_ELEMENT);
+    list.insert(DUMMY_ELEMENT);
+  }
 }
