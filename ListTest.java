@@ -45,13 +45,18 @@ public class ListTest {
   @Test
   public void afterInsertOneElementSize1() {
     assertEquals(0, list.size());
-    list.insert(DUMMY_ELEMENT);
-    assertEquals(1, list.size());
+    assertInsertIncreasesSizeByOne(DUMMY_ELEMENT);
   }
 
   @Test(expected = ListException.class)
   public void insertingDuplicateElementsThrowsException() {
     list.insert(DUMMY_ELEMENT);
     list.insert(DUMMY_ELEMENT);
+  }
+
+  private void assertInsertIncreasesSizeByOne(Comparable element) {
+    int size = list.size();
+    list.insert(element);
+    assertEquals(size + 1, list.size());
   }
 }
