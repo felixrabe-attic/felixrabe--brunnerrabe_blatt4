@@ -12,5 +12,6 @@ public class ListTest {
 
   @Test
   public void newIsEmpty() {
+    assertTrue(list.isEmpty());
   }
 }
