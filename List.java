@@ -1,8 +1,9 @@
 public class List {
+  private boolean empty = true;
 
   /** Praedikat, das prueft, ob Liste leer ist */
   public boolean isEmpty() {
-    return true;
+    return empty;
   }
 
   /** aktuelle Anzahl der Elemente */
@@ -12,5 +13,6 @@ public class List {
 
   /** sortiertes Einfuegen eines gegebenen Elementes, keine doppelten Elemente */
   public void insert(Comparable element) {
+    empty = false;
   }
 }

@@ -32,4 +32,11 @@ public class ListTest {
   public void insertCompiles() {
     list.insert(DUMMY_ELEMENT);
   }
+
+  @Test
+  public void afterInsertNotEmpty() {
+    assertTrue(list.isEmpty());
+    list.insert(DUMMY_ELEMENT);
+    assertFalse(list.isEmpty());
+  }
 }
