@@ -56,6 +56,13 @@ public class ListTest {
     list.insert(DUMMY_ELEMENT);
   }
 
+  @Test
+  public void afterInsertTwoElementsSize2() {
+    assertEquals(0, list.size());
+    assertInsertIncreasesSizeByOne(DUMMY_ELEMENT_1);
+    assertInsertIncreasesSizeByOne(DUMMY_ELEMENT_2);
+  }
+
   private void assertInsertIncreasesSizeByOne(Comparable element) {
     int size = list.size();
     list.insert(element);
