@@ -1,3 +1,5 @@
+package brunnerrabe.blatt4.aufgabe1;
+
 import org.junit.*;
 import org.junit.runner.*;
 import org.junit.runners.*;
@@ -59,4 +61,6 @@ public class ListTest {
     list.insert(element);
     assertEquals(size + 1, list.size());
   }
+
+  // TODO: insert keeps elements sorted
 }

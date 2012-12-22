@@ -1,3 +1,5 @@
+package brunnerrabe.blatt4.aufgabe1;
+
 @SuppressWarnings("unchecked")
 public class List {
   private Comparable element = null;
