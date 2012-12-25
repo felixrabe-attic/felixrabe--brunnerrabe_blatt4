@@ -106,4 +106,28 @@ public class List {
 
     return false;
   }
+
+  /** Loeschen eines gegebenen Elementes */
+  public void remove(Comparable element) {
+    Node current = head;
+    while (current != null) {
+      if (current.element.compareTo(element) == 0) {
+        if (current == head) {
+          // remove first
+          head = head.next;
+          head.prev = null;
+        } else if (current == tail) {
+          // remove last
+          tail = tail.prev;
+          tail.next = null;
+        } else {
+          // remove in the middle
+          current.prev.next = current.next;
+          current.next.prev = current.prev;
+        }
+        break;
+      }
+      current = current.next;
+    }
+  }
 }

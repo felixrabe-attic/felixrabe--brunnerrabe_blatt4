@@ -109,6 +109,20 @@ public class ListTest {
     assertIsSorted();
   }
 
+  @Test
+  public void removeFirstElement() {
+    list.insert(DUMMY_ELEMENT_1);
+    list.insert(DUMMY_ELEMENT_2);
+    list.insert(DUMMY_ELEMENT_3);
+
+    list.remove(DUMMY_ELEMENT_1);
+    assertEquals(DUMMY_ELEMENT_2, list.get(0));
+    assertEquals(DUMMY_ELEMENT_3, list.get(1));
+  }
+
+  // TODO: removeLastElement
+  // TODO: removeElementInTheMiddle
+
   /** expects all DUMMY_ELEMENTs to be inserted */
   private void assertIsSorted() {
     assertEquals(DUMMY_ELEMENT_1, list.get(0));
