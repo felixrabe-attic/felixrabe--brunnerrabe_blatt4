@@ -46,7 +46,23 @@ public class List {
       throw new ListException();
     }
 
-    head = new Node(element, null, head);
+    tail = new Node(element, tail, null);
+    if (head == null) {
+      head = tail;
+    } else {
+      tail.prev.next = tail;
+    }
+  }
+
+  /** Returns the element at the specified position in this list (like java.util.List.get()) */
+  public Comparable get(int index) {
+    Node current = head;
+
+    for (int i = 0; i < index; i++) {
+      current = current.next;
+    }
+
+    return current.element;
   }
 
   /** pruefe, ob ein gegebenes Element bereits in der Liste vorhanden ist */
