@@ -1,5 +1,7 @@
 package brunnerrabe.blatt4.aufgabe2;
 
+import java.util.Iterator;
+
 @SuppressWarnings("unchecked")
 public class List {
   private class Node {
@@ -11,6 +13,31 @@ public class List {
       this.element = element;
       this.prev    = null;
       this.next    = null;
+    }
+  }
+
+  public class ListIterator implements Iterator<Comparable> {
+    private Node current;
+
+    public ListIterator(Node head) {
+      current = head;
+    }
+
+    @Override
+    public boolean hasNext() {
+      return current != null;
+    }
+
+    @Override
+    public Comparable next() {
+      Node nextNode = current;
+      current = current.next;
+      return nextNode.element;
+    }
+
+    @Override
+    public void remove() {
+      throw new UnsupportedOperationException();
     }
   }
 
@@ -144,5 +171,9 @@ public class List {
       current = current.next;
     }
     return string;
+  }
+
+  public Iterator<Comparable> iterator() {
+    return new ListIterator(head);
   }
 }

@@ -1,5 +1,7 @@
 package brunnerrabe.blatt4.aufgabe2;
 
+import java.util.Iterator;
+
 import org.junit.*;
 import org.junit.runner.*;
 import org.junit.runners.*;
@@ -158,5 +160,27 @@ public class ListTest {
     assertEquals("" + DUMMY_ELEMENT_1 + "\n", list.toString());
     list.insert(DUMMY_ELEMENT_2);
     assertEquals("" + DUMMY_ELEMENT_1 + "\n" + DUMMY_ELEMENT_2 + "\n", list.toString());
+  }
+
+  @Test
+  public void iterate() {
+    list.insert(DUMMY_ELEMENT_1);
+    list.insert(DUMMY_ELEMENT_2);
+    list.insert(DUMMY_ELEMENT_3);
+
+    Iterator<Comparable> iter = list.iterator();
+
+    // while (iter.hasNext()) { Comparable element = iter.next(); }
+
+    assertTrue(iter.hasNext());
+    assertEquals(DUMMY_ELEMENT_1, iter.next());
+
+    assertTrue(iter.hasNext());
+    assertEquals(DUMMY_ELEMENT_2, iter.next());
+
+    assertTrue(iter.hasNext());
+    assertEquals(DUMMY_ELEMENT_3, iter.next());
+
+    assertFalse(iter.hasNext());
   }
 }
