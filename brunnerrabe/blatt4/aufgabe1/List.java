@@ -8,6 +8,7 @@ public class List {
     public Node next;
 
     public Node(Comparable element, Node prev, Node next) {
+      // TODO: remove prev and next arguments if not needed
       this.element = element;
       this.prev    = prev;
       this.next    = next;
@@ -46,12 +47,54 @@ public class List {
       throw new ListException();
     }
 
-    tail = new Node(element, tail, null);
-    if (head == null) {
-      head = tail;
+    Node newNode = new Node(element, null, null);
+    Node larger = findFirstNodeLargerThan(newNode);
+
+    if (isEmpty()) {
+      // newNode.next = larger;
+      // newNode.prev = larger.prev;
+      // newNode.prev.next = newNode;
+      // newNode.next.prev = newNode;
+      head = newNode;
+      tail = newNode;
+    } else if (larger == head) {  // larger.prev == null
+      // insert at beginning
+      newNode.next = larger;
+      // newNode.prev = larger.prev;
+      // newNode.prev.next = newNode;
+      newNode.next.prev = newNode;
+      head = newNode;
+      // tail = newNode;
+    } else if (larger == null) {
+      // insert at end
+      // newNode.next = larger;
+      // newNode.prev = larger.prev;
+      // newNode.prev.next = newNode;
+      // newNode.next.prev = newNode;
+      // head = newNode;
+      newNode.prev = tail;
+      tail.next = newNode;
+      tail = newNode;
     } else {
-      tail.prev.next = tail;
+      // insert in the middle
+      newNode.next = larger;
+      newNode.prev = larger.prev;
+      newNode.prev.next = newNode;
+      newNode.next.prev = newNode;
+      // head = newNode;
+      // tail = newNode;
     }
+  }
+
+  private Node findFirstNodeLargerThan(Node newNode) {
+    Node larger = head;
+    while (larger != null) {  // TODO: write test to prove that 'larger != null' is the right way
+      if (larger.element.compareTo(newNode.element) > 0) {
+        break;
+      }
+      larger = larger.next;
+    }
+    return larger;
   }
 
   /** Returns the element at the specified position in this list (like java.util.List.get()) */

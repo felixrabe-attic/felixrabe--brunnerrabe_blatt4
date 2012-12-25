@@ -83,11 +83,20 @@ public class ListTest {
   }
 
   @Test
-  public void insertSortedElementsStaySorted() {
+  public void insertSortedElementsToStaySorted() {
     list.insert(DUMMY_ELEMENT_1);
     list.insert(DUMMY_ELEMENT_2);
     list.insert(DUMMY_ELEMENT_3);
     list.insert(DUMMY_ELEMENT_4);
+    assertIsSorted();
+  }
+
+  @Test
+  public void insertReversedElementsToStaySorted() {
+    list.insert(DUMMY_ELEMENT_4);
+    list.insert(DUMMY_ELEMENT_3);
+    list.insert(DUMMY_ELEMENT_2);
+    list.insert(DUMMY_ELEMENT_1);
     assertIsSorted();
   }
 
