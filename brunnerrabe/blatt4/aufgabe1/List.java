@@ -51,27 +51,15 @@ public class List {
     Node larger = findFirstNodeLargerThan(newNode);
 
     if (isEmpty()) {
-      // newNode.next = larger;
-      // newNode.prev = larger.prev;
-      // newNode.prev.next = newNode;
-      // newNode.next.prev = newNode;
       head = newNode;
       tail = newNode;
     } else if (larger == head) {  // larger.prev == null
       // insert at beginning
       newNode.next = larger;
-      // newNode.prev = larger.prev;
-      // newNode.prev.next = newNode;
       newNode.next.prev = newNode;
       head = newNode;
-      // tail = newNode;
     } else if (larger == null) {
       // insert at end
-      // newNode.next = larger;
-      // newNode.prev = larger.prev;
-      // newNode.prev.next = newNode;
-      // newNode.next.prev = newNode;
-      // head = newNode;
       newNode.prev = tail;
       tail.next = newNode;
       tail = newNode;
@@ -81,8 +69,6 @@ public class List {
       newNode.prev = larger.prev;
       newNode.prev.next = newNode;
       newNode.next.prev = newNode;
-      // head = newNode;
-      // tail = newNode;
     }
   }
 
