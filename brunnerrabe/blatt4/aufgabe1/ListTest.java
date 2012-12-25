@@ -100,6 +100,15 @@ public class ListTest {
     assertIsSorted();
   }
 
+  @Test
+  public void insertChaoticElementsToStaySorted() {
+    list.insert(DUMMY_ELEMENT_2);
+    list.insert(DUMMY_ELEMENT_4);
+    list.insert(DUMMY_ELEMENT_1);
+    list.insert(DUMMY_ELEMENT_3);
+    assertIsSorted();
+  }
+
   /** expects all DUMMY_ELEMENTs to be inserted */
   private void assertIsSorted() {
     assertEquals(DUMMY_ELEMENT_1, list.get(0));
