@@ -130,4 +130,20 @@ public class List {
       current = current.next;
     }
   }
+
+  /** zeigt den Inhalt aller Listenelemente auf dem Bildschirm an */
+  public void print() {
+    System.out.println(toString());
+  }
+
+  @Override
+  public String toString() {
+    String string = "";
+    Node current = head;
+    while (current != null) {
+      string += current.element + "\n";
+      current = current.next;
+    }
+    return string;
+  }
 }

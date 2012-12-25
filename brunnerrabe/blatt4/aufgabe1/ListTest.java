@@ -149,4 +149,14 @@ public class ListTest {
     assertEquals(DUMMY_ELEMENT_3, list.get(2));
     assertEquals(DUMMY_ELEMENT_4, list.get(3));
   }
+
+  @Test
+  public void toString_() {
+    assertTrue(list.isEmpty());
+    assertEquals("", list.toString());
+    list.insert(DUMMY_ELEMENT_1);
+    assertEquals("" + DUMMY_ELEMENT_1 + "\n", list.toString());
+    list.insert(DUMMY_ELEMENT_2);
+    assertEquals("" + DUMMY_ELEMENT_1 + "\n" + DUMMY_ELEMENT_2 + "\n", list.toString());
+  }
 }
