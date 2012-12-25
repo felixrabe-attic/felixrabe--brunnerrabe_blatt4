@@ -120,8 +120,27 @@ public class ListTest {
     assertEquals(DUMMY_ELEMENT_3, list.get(1));
   }
 
-  // TODO: removeLastElement
-  // TODO: removeElementInTheMiddle
+  @Test
+  public void removeElementInTheMiddle() {
+    list.insert(DUMMY_ELEMENT_1);
+    list.insert(DUMMY_ELEMENT_2);
+    list.insert(DUMMY_ELEMENT_3);
+
+    list.remove(DUMMY_ELEMENT_2);
+    assertEquals(DUMMY_ELEMENT_1, list.get(0));
+    assertEquals(DUMMY_ELEMENT_3, list.get(1));
+  }
+
+  @Test
+  public void removeLastElement() {
+    list.insert(DUMMY_ELEMENT_1);
+    list.insert(DUMMY_ELEMENT_2);
+    list.insert(DUMMY_ELEMENT_3);
+
+    list.remove(DUMMY_ELEMENT_3);
+    assertEquals(DUMMY_ELEMENT_1, list.get(0));
+    assertEquals(DUMMY_ELEMENT_2, list.get(1));
+  }
 
   /** expects all DUMMY_ELEMENTs to be inserted */
   private void assertIsSorted() {
