@@ -46,36 +46,7 @@ public class List {
       throw new ListException();
     }
 
-    Node next = head;
-    while (next != tail) {  // TODO: write test to prove that 'next != null' is the right way
-      if (next.element.compareTo(element) > 0) {
-        break;
-      }
-      next = next.next;
-    }
-
-    // Create new Node
-    Node node = new Node(element, next != null ? next.prev : null, next);
-
-    // Update head if next == head
-    if (next == head) {
-      head = node;
-    }
-
-    // Update tail if node.next == null
-    if (node.next == null) {
-      tail = node;
-    }
-
-    // Update previous Node's next reference
-    if (next != null && next.prev != null) {
-      next.prev.next = node;
-    }
-
-    // Update next Node's previous reference
-    if (next != null) {
-      next.prev = node;
-    }
+    head = new Node(element, null, head);
   }
 
   /** pruefe, ob ein gegebenes Element bereits in der Liste vorhanden ist */
