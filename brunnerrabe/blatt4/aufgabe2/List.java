@@ -165,11 +165,10 @@ public class List {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    Node current = head;
-    while (current != null) {
-      sb.append(current.element);
+    Iterator iter = iterator();
+    while (iter.hasNext()) {
+      sb.append(iter.next());
       sb.append("\n");
-      current = current.next;
     }
     return sb.toString();
   }
