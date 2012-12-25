@@ -79,18 +79,23 @@ public class ListTest {
     assertEquals(DUMMY_ELEMENT_1, list.get(0));
     assertEquals(DUMMY_ELEMENT_2, list.get(1));
     assertEquals(DUMMY_ELEMENT_3, list.get(2));
+    // TODO: list.get(3) should throw an exception
   }
 
-  // @Test
-  // public void insertKeepsElementsSorted() {
-  //   list.insert(DUMMY_ELEMENT_1);
-  //   list.insert(DUMMY_ELEMENT_2);
-  //   list.insert(DUMMY_ELEMENT_3);
-  //   list.insert(DUMMY_ELEMENT_4);
-  //   assertIsSorted();
-  // }
+  @Test
+  public void insertSortedElementsStaySorted() {
+    list.insert(DUMMY_ELEMENT_1);
+    list.insert(DUMMY_ELEMENT_2);
+    list.insert(DUMMY_ELEMENT_3);
+    list.insert(DUMMY_ELEMENT_4);
+    assertIsSorted();
+  }
 
-  // private void assertIsSorted() {
-
-  // }
+  /** expects all DUMMY_ELEMENTs to be inserted */
+  private void assertIsSorted() {
+    assertEquals(DUMMY_ELEMENT_1, list.get(0));
+    assertEquals(DUMMY_ELEMENT_2, list.get(1));
+    assertEquals(DUMMY_ELEMENT_3, list.get(2));
+    assertEquals(DUMMY_ELEMENT_4, list.get(3));
+  }
 }
