@@ -164,13 +164,14 @@ public class List {
 
   @Override
   public String toString() {
-    String string = "";
+    StringBuilder sb = new StringBuilder();
     Node current = head;
     while (current != null) {
-      string += current.element + "\n";
+      sb.append(current.element);
+      sb.append("\n");
       current = current.next;
     }
-    return string;
+    return sb.toString();
   }
 
   public Iterator<Comparable> iterator() {
