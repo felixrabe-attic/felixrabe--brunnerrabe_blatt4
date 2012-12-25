@@ -183,4 +183,14 @@ public class ListTest {
 
     assertFalse(iter.hasNext());
   }
+
+  @Test
+  public void contains() {
+    list.insert(DUMMY_ELEMENT_1);
+    list.insert(DUMMY_ELEMENT_3);
+    assertTrue(list.contains(DUMMY_ELEMENT_1));
+    assertFalse(list.contains(DUMMY_ELEMENT_2));
+    assertTrue(list.contains(DUMMY_ELEMENT_3));
+    assertFalse(list.contains(DUMMY_ELEMENT_4));
+  }
 }

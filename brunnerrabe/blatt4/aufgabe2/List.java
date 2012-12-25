@@ -121,7 +121,7 @@ public class List {
   }
 
   /** pruefe, ob ein gegebenes Element bereits in der Liste vorhanden ist */
-  private boolean contains(Comparable element) {
+  public boolean contains(Comparable element) {
     Node current = head;
     while (current != null) {
       if (current.element.compareTo(element) == 0) {
