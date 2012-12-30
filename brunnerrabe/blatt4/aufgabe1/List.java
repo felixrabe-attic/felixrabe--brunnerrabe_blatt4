@@ -7,11 +7,10 @@ public class List {
     public Node prev;
     public Node next;
 
-    public Node(Comparable element, Node prev, Node next) {
-      // TODO: remove prev and next arguments if not needed
+    public Node(Comparable element) {
       this.element = element;
-      this.prev    = prev;
-      this.next    = next;
+      this.prev    = null;
+      this.next    = null;
     }
   }
 
@@ -47,7 +46,7 @@ public class List {
       throw new ListException();
     }
 
-    Node newNode = new Node(element, null, null);
+    Node newNode = new Node(element);
     Node larger = findFirstNodeLargerThan(newNode);
 
     if (isEmpty()) {
